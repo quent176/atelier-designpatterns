@@ -20,18 +20,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button addNews = findViewById(R.id.add_news);
-        addNews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, JournalistActivity.class));
-            }
-        });
-
-        // init singleton then load news
-        NewsSingleton newsSingleton = NewsSingleton.getInstance();
-        newsSingleton.addObserver(this);
-        newsSingleton.loadNews();
+        // TODO : init singleton then load news
 
         // setup the adapter
         RecyclerView newsListView = findViewById(R.id.news_list);
@@ -40,12 +29,18 @@ public class MainActivity extends AppCompatActivity implements Observer {
         mAdapter = new NewsAdapter(new NewsAdapter.NewsClickListener() {
             @Override
             public void onClick(NewsModel newsModel) {
-                Intent intent = new Intent(MainActivity.this, NewsActivity.class);
-                intent.putExtra("news", newsModel);
-                startActivity(intent);
+                // TODO : call NewsActivity
             }
         });
-        newsListView.swapAdapter(mAdapter, false);
+        newsListView.setAdapter(mAdapter);
+
+        Button addNews = findViewById(R.id.add_news);
+        addNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, JournalistActivity.class));
+            }
+        });
     }
 
     @Override

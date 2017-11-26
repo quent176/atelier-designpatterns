@@ -9,10 +9,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by bastienwcs on 26/11/17.
- */
-
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
     private List<NewsModel> mNewsList;
     private View mItemView;

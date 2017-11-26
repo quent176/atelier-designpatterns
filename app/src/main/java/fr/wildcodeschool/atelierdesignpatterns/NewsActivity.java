@@ -1,6 +1,5 @@
 package fr.wildcodeschool.atelierdesignpatterns;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -12,12 +11,9 @@ public class NewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
-        Intent intent = getIntent();
-        NewsModel newsModel = intent.getParcelableExtra("news");
-
         TextView headline = findViewById(R.id.newsitem_headline);
-        headline.setText(newsModel.getHeadline());
         TextView content = findViewById(R.id.newsitem_content);
-        content.setText(newsModel.getNewsContent());
+
+        // TODO : show headline and content
     }
 }
