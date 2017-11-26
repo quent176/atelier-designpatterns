@@ -28,15 +28,23 @@ public class MainActivity extends AppCompatActivity implements Observer {
             }
         });
 
-        // init news loading
+        // init singleton then load news
         NewsSingleton newsSingleton = NewsSingleton.getInstance();
         newsSingleton.addObserver(this);
+        newsSingleton.loadNews();
 
         // setup the adapter
         RecyclerView newsListView = findViewById(R.id.news_list);
         newsListView.setHasFixedSize(true);
         newsListView.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new NewsAdapter();
+        mAdapter = new NewsAdapter(new NewsAdapter.NewsClickListener() {
+            @Override
+            public void onClick(NewsModel newsModel) {
+                Intent intent = new Intent(MainActivity.this, NewsActivity.class);
+                intent.putExtra("news", newsModel);
+                startActivity(intent);
+            }
+        });
         newsListView.swapAdapter(mAdapter, false);
     }
 

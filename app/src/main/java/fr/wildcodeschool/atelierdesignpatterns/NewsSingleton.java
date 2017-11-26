@@ -20,6 +20,18 @@ class NewsSingleton extends Observable {
     private List<NewsModel> mNewsList = new ArrayList<>();
 
     private NewsSingleton() {
+
+    }
+
+    static NewsSingleton getInstance() {
+        if (sInstance == null) {
+            sInstance = new NewsSingleton();
+        }
+        return sInstance;
+    }
+
+    void loadNews() {
+        // TODO : load news from Firebase then notifiy observers
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference newsRef = database.getReference("news");
         newsRef.addValueEventListener(new ValueEventListener() {
@@ -36,15 +48,9 @@ class NewsSingleton extends Observable {
             }
 
             @Override
-            public void onCancelled(DatabaseError error) {}
+            public void onCancelled(DatabaseError error) {
+            }
         });
-    }
-
-    static NewsSingleton getInstance() {
-        if (sInstance == null) {
-            sInstance = new NewsSingleton();
-        }
-        return sInstance;
     }
 
     List<NewsModel> getNews() {
