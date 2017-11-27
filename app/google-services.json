@@ -103,6 +103,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "723328568064-38iacqo1u79qgs3tnm6hhjd9jtuq56nv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.wildcodeschool.atelierdesignpatterns",
+            "certificate_hash": "9d792ecb57db58468d110b82e4f0f5c33731fa01"
+          }
+        },
+        {
+          "client_id": "723328568064-n621t29u47koms1ke8smojant48da85l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.wildcodeschool.atelierdesignpatterns",
+            "certificate_hash": "2c8356f7f420c9f0061d1aaa632dfad44327e303"
+          }
+        },
+        {
           "client_id": "723328568064-q5ge1r8c4dfv0kmunh7ksra1tgouj62j.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
