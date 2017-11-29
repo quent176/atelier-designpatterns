@@ -32,7 +32,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         final NewsModel newsModel = mNewsList.get(position);
         holder.headline.setText(newsModel.getHeadline());
         holder.content.setText(newsModel.getNewsContent());
-        mItemView.setOnClickListener(new View.OnClickListener() {
+        holder.headline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mListener.onClick(newsModel);
